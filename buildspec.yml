@@ -1,0 +1,21 @@
+version: 0.1
+
+phases:
+  install:
+    commands:
+      - echo "nothing to do in install"
+  pre_build:
+    commands:
+      - echo “Nothing to install for dependencies”
+  build:
+    commands:
+      - echo "Starting build `date` in `pwd`"
+      - zip -r webapp.zip *
+  post_build:
+    commands:
+      - echo "build completed on `date`"
+
+artifacts:
+  files:
+    - webapp.zip
+  discard-paths: yes
